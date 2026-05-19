@@ -1,0 +1,21 @@
+{
+  "name": "expense-tracker",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "db:up": "docker-compose up -d postgres",
+    "db:down": "docker-compose down",
+    "dev:api": "npm run start:dev --workspace=@expense-tracker/api",
+    "dev:web": "npm run dev --workspace=@expense-tracker/web",
+    "build:api": "npm run build --workspace=@expense-tracker/api",
+    "build:web": "npm run build --workspace=@expense-tracker/web",
+    "build:shared": "npm run build --workspace=@expense-tracker/shared"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
