@@ -84,6 +84,37 @@ src/
 
 Только TypeScript-интерфейсы (не Prisma-типы). Подключается в оба приложения через `@expense-tracker/shared`.
 
+## Commit conventions
+
+Commits must follow [Conventional Commits](https://www.conventionalcommits.org/):
+
+```
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+**Types:** `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`, `perf`, `ci`, `build`
+
+**Examples:**
+```
+feat(auth): add JWT refresh token support
+fix(expenses): correct total calculation on delete
+refactor(api): extract pagination helper
+chore: update dependencies
+```
+## Соглашение о коммитах
+
+- Breaking changes: add `!` after type (`feat!:`) or `BREAKING CHANGE:` in footer
+- Scope is optional but recommended (e.g. `api`, `web`, `auth`, `expenses`, `categories`)
+Используй Conventional Commits:
+- Тип: feat, fix, docs, refactor, test, ci
+- Область (scope): модуль или область изменений
+- Описание на русском, кратко
+- Breaking changes помечай восклицательным знаком
+
 ## Key conventions
 
 - DTO-классы в `apps/api` используют `class-validator` декораторы; `strictPropertyInitialization: false` в tsconfig
